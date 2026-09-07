@@ -12,6 +12,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PharmaGo">
         <activity
+            android:name=".OrderHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OrderTypeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PrescriptionUploadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MedicineSearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
