@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F5F7FB">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/pickupContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PharmaGo"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#176B4D"
+                android:layout_marginBottom="28dp" />
+
+            <TextView
+                android:id="@+id/tvPickupStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Takeaway Order Confirmed"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:textColor="#176B4D"
+                android:gravity="center"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:id="@+id/tvPickupDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pickup details"
+                android:textSize="17sp"
+                android:textColor="#202124"
+                android:background="#FFFFFF"
+                android:padding="20dp"
+                android:elevation="3dp"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Pickup QR Code"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#202124"
+                android:layout_marginBottom="12dp" />
+
+            <ImageView
+                android:id="@+id/imgPickupQR"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:contentDescription="PharmaGo pickup QR code"
+                android:scaleType="fitCenter"
+                android:background="#FFFFFF"
+                android:padding="8dp"
+                android:elevation="4dp" />
+
+            <TextView
+                android:id="@+id/tvPickupQR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pickup ID: --"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#176B4D"
+                android:gravity="center"
+                android:layout_marginTop="14dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Please show this QR code to the pharmacist when collecting your medicine."
+                android:textSize="15sp"
+                android:textColor="#5F6368"
+                android:gravity="center"
+                android:layout_marginTop="18dp" />
+
+            <Button
+                android:id="@+id/btnBackHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Back to Home"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:padding="14dp"
+                android:layout_marginTop="28dp"
+                android:backgroundTint="#176B4D"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</ScrollView>

@@ -1,10 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MedicineSearchActivity">
+    android:fillViewport="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:id="@+id/medicineHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Medicine Search"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvPharmacyName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selected Pharmacy"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingBottom="20dp" />
+
+            <EditText
+                android:id="@+id/etSearchMedicine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Search medicine"
+                android:inputType="text"
+                android:padding="14dp" />
+
+            <Button
+                android:id="@+id/btnSearchMedicine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Search Medicine"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Available Medicines"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:paddingBottom="15dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/medicineContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/medicineHeader"
+            android:orientation="vertical" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</ScrollView>

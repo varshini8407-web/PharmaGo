@@ -1,6 +1,7 @@
 package com.example.pharmago;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -9,17 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
-    Button btnPharmacy;
-    Button btnMedicine;
-    Button btnPrescription;
-    Button btnDelivery;
-
-    Button navSearch;
-    Button navOrders;
-    Button navProfile;
-
-    TextView btnNotification;
-    TextView btnProfile;
+    Button btnPharmacy, btnMedicine, btnPrescription, btnDelivery;
+    Button navSearch, navOrders, navProfile;
+    TextView btnNotification, btnProfile, tvWelcome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,84 +30,22 @@ public class HomeActivity extends AppCompatActivity {
 
         btnNotification = findViewById(R.id.btnNotification);
         btnProfile = findViewById(R.id.btnProfile);
+        tvWelcome = findViewById(R.id.tvWelcome);
 
-        // Find Pharmacy
-        btnPharmacy.setOnClickListener(v -> {
-            Intent intent = new Intent(
-                    HomeActivity.this,
-                    SearchActivity.class
-            );
-            startActivity(intent);
-        });
+        SharedPreferences prefs = getSharedPreferences("PharmaGoPrefs", MODE_PRIVATE);
+        String username = prefs.getString("username", "User");
+        tvWelcome.setText(getString(R.string.hello_user, username));
 
-        // Search Medicine
-        btnMedicine.setOnClickListener(v -> {
-            Intent intent = new Intent(
-                    HomeActivity.this,
-                    MedicineSearchActivity.class
-            );
-            startActivity(intent);
-        });
+        btnPharmacy.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, SearchActivity.class)));
+        btnMedicine.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, MedicineSearchActivity.class)));
+        btnPrescription.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, PrescriptionUploadActivity.class)));
+        btnDelivery.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, OrderTypeActivity.class)));
 
-        // Prescription
-        btnPrescription.setOnClickListener(v -> {
-            Intent intent = new Intent(
-                    HomeActivity.this,
-                    PrescriptionUploadActivity.class
-            );
-            startActivity(intent);
-        });
+        btnProfile.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, ProfileActivity.class)));
+        btnNotification.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, NotificationActivity.class)));
 
-        // Delivery
-        btnDelivery.setOnClickListener(v -> {
-            Intent intent = new Intent(
-                    HomeActivity.this,
-                    OrderTypeActivity.class
-            );
-            startActivity(intent);
-        });
-
-        // Profile
-        btnProfile.setOnClickListener(v -> {
-            Intent intent = new Intent(
-                    HomeActivity.this,
-                    ProfileActivity.class
-            );
-            startActivity(intent);
-        });
-
-        // Notifications
-        btnNotification.setOnClickListener(v -> {
-            Intent intent = new Intent(
-                    HomeActivity.this,
-                    NotificationActivity.class
-            );
-            startActivity(intent);
-        });
-
-        // Bottom navigation
-        navSearch.setOnClickListener(v -> {
-            Intent intent = new Intent(
-                    HomeActivity.this,
-                    SearchActivity.class
-            );
-            startActivity(intent);
-        });
-
-        navOrders.setOnClickListener(v -> {
-            Intent intent = new Intent(
-                    HomeActivity.this,
-                    OrderHistoryActivity.class
-            );
-            startActivity(intent);
-        });
-
-        navProfile.setOnClickListener(v -> {
-            Intent intent = new Intent(
-                    HomeActivity.this,
-                    ProfileActivity.class
-            );
-            startActivity(intent);
-        });
+        navSearch.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, SearchActivity.class)));
+        navOrders.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, OrderHistoryActivity.class)));
+        navProfile.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, ProfileActivity.class)));
     }
 }
